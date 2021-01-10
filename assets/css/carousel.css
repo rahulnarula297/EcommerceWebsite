@@ -1,5 +1,5 @@
 .slideshow{
-    width: 100%;
+    width: 95%%;
     height: auto;
     margin: auto;
     padding:25px 0;
@@ -10,7 +10,7 @@
 }
 .slideshow .carousel-inner .carousel-item{
     margin: auto;
-    width: 95%;
+    /* width: 95%; */
 }
 .slideshow .carousel-inner img{
     height: 550px;
@@ -24,7 +24,7 @@
 
 }
 .carousel-text .heading{
-    position: relative;
+    /* position: relative; */
     width: 75%;
 
 }
@@ -35,13 +35,26 @@
     color: brown;
 }
 .carousel-text .post-script{
-    position: relative;
+    /* position: relative; */
     width: 75%;
 }
 .carousel-text .post-script p{
     font-size: 25px;
     font-weight: 600;
     color: rgb(105, 8, 37);
+}
+
+@media (max-width:550px){
+    .carousel-text{
+        left: 50px;
+    
+    }
+    .carousel-text .heading h2{
+        font-size: 25px;
+    }
+    .carousel-text .post-script p{
+        font-size: 20px;
+    }
 }
 
 /* ..............................................bestsellers.......................... */

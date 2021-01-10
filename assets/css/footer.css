@@ -81,3 +81,13 @@ footer{
          }
          
     }
+
+    @media (max-width:750px){
+        .right .content{
+            display: flex;
+            flex-direction: row;
+        }
+        .right .content .content-links{
+           margin: auto;
+        }
+    }

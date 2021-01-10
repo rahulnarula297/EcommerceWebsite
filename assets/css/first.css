@@ -16,7 +16,7 @@ nav{
     padding: 12px 0;
     box-shadow: -3px -3px 7px #ffffff , 3px 3px 5px #ceced1;
     /* backface-visibility: visible; */
-    z-index: 10;
+    z-index: 100;
 
 
 }
@@ -92,9 +92,10 @@ nav label.cancel{
     display: none;
 }
 nav.black{
+    position: fixed;
     background:#ecf0f3;
     padding: 6px 0;
-    position: fixed;
+    
     
 }
 
