@@ -1,0 +1,270 @@
+<link rel="stylesheet" href="/css/single-product.css">
+<link rel="stylesheet" href="/css/categories.css">
+<link rel="stylesheet" href="/css/product-cards.css">
+<link rel="stylesheet" href="/css/reviews.css">
+
+<section id="description">
+    <div class="bakery-head" >
+        <div class="heading ">
+           <h1 >rahul narula</h1>
+       </div>
+       <div class="info">
+           <div class="area">
+               <p>shalimar bagh</p>
+           </div>
+           <div class="timings">
+               <p>mon-fri</p>
+               <p>9-10pm</p>
+           </div>
+           <div class="contact">
+               <p>999770297</p>
+           </div>
+       </div>
+   </div>
+
+
+    <div class="d-main">
+        <% if(productExist == true) { %>
+        <div class="d-image">
+            <div class="img">
+                <img src="<%=product.productimage%>" alt="<%= product.name %>" id="productimg">
+            </div>
+            <div class="info-div ">
+                <div class="product-infor  product-d">
+                    <p><span>description :</span> <%=product.description%></p>
+                </div>
+    
+                <div class="flavour product-d">
+                    <p><span>flavour :</span> <%=product.flavour%></p>
+                </div>
+    
+                <div class="product-weight product-d">
+                    <p><span>product weight :</span> <%=product.weight%></p>
+                </div>
+    
+                <div class="serving-size product-d">
+                    <p><span>serving size :</span> <%=product.serving_size%></p>
+                </div>
+                
+                <div class="product-variants product-d">
+                    <p><span>different variants :</span> <%=product.variants%></p>
+                </div>
+    
+                <div class="price-per-kg product-d">
+                    <p><span>price per kg :</span> <%=product.price_per_kg%></p>
+                </div>
+    
+                <div class="customizable product-d">
+                    <p><span>customization :</span> <%=product.customizable%></p>
+                </div>
+    
+                <div class="product-units product-d">
+                    <p><span>Number of units :</span> <%=product.units%></p>
+                </div>
+    
+                <div class="product-expiry product-d">
+                    <p><span>Used by :</span> <%=product.expiry%></p>
+                </div>
+    
+                <div class="product-delivery-time product-d">
+                    <p><span>Delivery time :</span> <%=product.delivery_time%></p>
+                </div>
+    
+                <div class="product-eggless product-d">
+                    <p><span>Eggless :</span> <%=product.eggless%></p>
+                </div>
+            
+            </div>
+            <div class="head">
+                <div class="image-name">
+                    <h2><%=product.name%></h2>
+                    <p>Rs <%=product.price%>/-</p>
+                    <p>liked by : <%=product.likes%> persons</p>
+                </div>
+                
+            </div>
+        </div>
+        <div class="order-button">
+            <div class="desc-links" style="background-color: whete;">
+              <ul>
+                <li><a target="_blank" class="insta"><i class="fab fa-instagram"></i></a></li>
+                <li><a target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a></li>
+                <li><a target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a target="_blank" class="mail"><i class="fas fa-envelope"></i></a></li>
+              </ul>
+            </div>
+            <div class="sub-button">
+            <div class="sub-btn"> 
+                <button type="button"  data-toggle="modal" data-target="#exampleModalCenter1">
+                    place order <i class="fas fa-arrow-right"></i>
+                </button>
+                <div class="modal" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalCenterTitle">Rate This Product</h5>
+                                <button type="button" class="close btn btn-secondary" style="color: black;" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form action="/single-product/userReview/<%=product.id%>" method="post" class="review-form">
+                                <div class="modal-body review-info">
+                                    <div class="prod-name">
+                                        <h4><%= product.name %></h4>
+                                    </div>
+                                    <div class="prod-image">
+                                        <img src="<%= product.productimage %>" alt="">
+                                    </div>
+                                    <div class="name">
+                                        <label for="name">NAME</label>
+                                        <input type="text" name="name">
+                                    </div>
+                                    <div class="review-text">
+                                        <label for="review-content">REVIEW</label>
+                                        <textarea name="review_content" id="" cols="40" rows="4"></textarea>
+                                    </div> 
+                                    <div class="rating"> 
+                                        <input type="radio" name="rating" value="5" id="5">
+                                        <label for="5">☆</label>
+                                        <input type="radio" name="rating" value="4" id="4">
+                                        <label for="4">☆</label> 
+                                        <input type="radio" name="rating" value="3" id="3">
+                                        <label for="3">☆</label> 
+                                        <input type="radio" name="rating" value="2" id="2">
+                                        <label for="2">☆</label> 
+                                        <input type="radio" name="rating" value="1" id="1">
+                                        <label for="1">☆</label>
+                                    </div>
+                                </div>
+                                <div class="modal-footer review-btns">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit"  class="btn btn-primary">Post Review</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-btn"> 
+                <button><a href="">customize<i class="fas fa-arrow-right"></i></a></button>
+            </div>
+          </div>
+        </div>
+
+        <div id="imgModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+        </div>
+
+        
+
+        <section id="reviews">
+            <div class="review-head">
+                <h1>reviews</h1>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary rev-btn" data-toggle="modal" data-target="#exampleModalCenter">
+                    write a review <i class="fas fa-arrow-right"></i>
+                </button>
+                
+                <!-- Modal -->
+                <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalCenterTitle">Rate This Product</h5>
+                                <button type="button" class="close btn btn-secondary" style="color: black;" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form action="/single-product/userReview/<%=product.id%>" method="post" class="review-form">
+                                <div class="modal-body review-info">
+                                    <div class="prod-name">
+                                        <h4><%= product.name %></h4>
+                                    </div>
+                                    <div class="prod-image">
+                                        <img src="<%= product.productimage %>" alt="">
+                                    </div>
+                                    <div class="name">
+                                        <label for="name">NAME</label>
+                                        <input type="text" name="name">
+                                    </div>
+                                    <div class="review-text">
+                                        <label for="review-content">REVIEW</label>
+                                        <textarea name="review_content" id="" cols="40" rows="4"></textarea>
+                                    </div> 
+                                    <div class="rating"> 
+                                        <input type="radio" name="rating" value="5" id="5">
+                                        <label for="5">☆</label>
+                                        <input type="radio" name="rating" value="4" id="4">
+                                        <label for="4">☆</label> 
+                                        <input type="radio" name="rating" value="3" id="3">
+                                        <label for="3">☆</label> 
+                                        <input type="radio" name="rating" value="2" id="2">
+                                        <label for="2">☆</label> 
+                                        <input type="radio" name="rating" value="1" id="1">
+                                        <label for="1">☆</label>
+                                    </div>
+                                </div>
+                                <div class="modal-footer review-btns">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit"  class="btn btn-primary">Post Review</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-main responsive">
+                <% if(reviews == false) { %>
+                    <div>
+                        <h3> No Reviews Yet</h3>
+                    </div>
+                <% } %>
+                <% for(review of reviews) { %>
+                    <%- include('_review.ejs'); %>
+                <% } %>
+            </div>
+        </section>
+        <section id="similar-prod">
+            <div class="similar-products">
+                <div class="similar-heading">
+                    <h2>similar products</h2>
+                </div>
+                <div class="similar-content responsive">
+                    
+                    <% for(product of similar_products) { %>
+                        <div>
+                            <%- include('_product-card.ejs'); %>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </section>
+        <% }else{ %>
+            <section id="no-product">
+                <div>
+                    <h1>Product Not Available. Check our Other Products</h1>
+                </div>
+            </section>
+            <section id="similar-prod">
+                <div class="similar-products">
+                    <div class="similar-heading">
+                        <h2>similar products</h2>
+                    </div>
+                    <div class="similar-content responsive">
+                        
+                        <% for(product of similar_products) { %>
+                            <div>
+                                <%- include('_product-card.ejs'); %>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+            </section>
+        <% } %>
+    </div>
+</section>
+<script src="/js/single-product.js"></script>
+<script src="/js/like.js"></script>
